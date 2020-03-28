@@ -13,6 +13,8 @@ function Beers() {
         dispatch(beerActions.getAll());
     }, [dispatch]);
 
+    console.log(beers)
+
     return (
         <div className="col-lg-8 offset-lg-2">
             <h1>Hi {user}!</h1>
