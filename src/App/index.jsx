@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { history } from '../helpers';
 import { alertActions } from '../actions';
 import { PrivateRoute } from '../components';
-import { Beers } from '../pages/Beers/'
+import { Beers } from '../pages/Beers'
+import { BeerById } from '../pages/Beers/BeerById'
 import { Login } from '../pages/Login';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                     <Router history={history}>
                         <Switch>
                             <PrivateRoute exact path="/" component={Beers} />
+                            <PrivateRoute exact path="/beer/:id" component={BeerById} />
                             <Route path="/login" component={Login} />
                             <Redirect from="*" to="/" />
                         </Switch>
