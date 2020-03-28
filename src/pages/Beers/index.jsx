@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Paginator from 'react-hooks-paginator';
+import FramedLayout from "../../layouts/Framed"
 
 import { beerActions } from '../../actions';
 
@@ -19,7 +20,7 @@ function Beers() {
     console.log(currentPage, offset)
 
     return (
-        <>
+        <FramedLayout userName={user}>
         <div className="col-lg-8 offset-lg-2">
             <h1>Hi {user}!</h1>
             <p>You're logged in with React Hooks!!</p>
@@ -49,7 +50,7 @@ function Beers() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
         />
-        </>
+        </FramedLayout>
     );
 }
 
