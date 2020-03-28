@@ -1,9 +1,14 @@
 export const beerService = {
-    getAll
+    getAll,
+    getBeerById
 };
 
 function getAll() {
     return fetch(`https://api.punkapi.com/v2/beers`).then(handleResponse);
+}
+
+function getBeerById(id) {
+    return fetch(`https://api.punkapi.com/v2/beers/${id}`).then(handleResponse).then(elem => elem && elem[0]);
 }
 
 function handleResponse(response) {

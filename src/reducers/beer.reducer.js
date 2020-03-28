@@ -1,16 +1,16 @@
 import { beerConstants } from '../constants';
 
-export function beers(state = {}, action) {
+export function beer(state = {}, action) {
   switch (action.type) {
-    case beerConstants.GETALLBEERS_REQUEST:
+    case beerConstants.GETALLBEERBYID_REQUEST:
       return {
         loading: true
       };
-    case beerConstants.GETALLBEERS_SUCCESS:
+    case beerConstants.GETALLBEERBYID_SUCCESS:
       return {
-        items: action.beers
+        items: action.beer
       };
-    case beerConstants.GETALLBEERS_FAILURE:
+    case beerConstants.GETALLBEERBYID_FAILURE:
       return { 
         error: action.error
       };

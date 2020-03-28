@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { Router, Switch, Redirect, Route } from 'react-router-dom';
+import {  useSelector } from 'react-redux';
 import { history } from '../helpers';
-import { alertActions } from '../actions';
+// import { alertActions } from '../actions';
 import { PrivateRoute } from '../components';
 import { Beers } from '../pages/Beers'
 import { BeerById } from '../pages/Beers/BeerById'
@@ -10,14 +10,14 @@ import { Login } from '../pages/Login';
 
 function App() {
     const alert = useSelector(state => state.alert);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        history.listen(() => {
-            // clear alert on location change
-            dispatch(alertActions.clear());
-        });
-    }, [dispatch]);
+    // useEffect(() => {
+    //     history.listen(() => {
+    //         // clear alert on location change
+    //         dispatch(alertActions.clear());
+    //     });
+    // }, [dispatch]);
 
     return (
         <div className="jumbotron">
