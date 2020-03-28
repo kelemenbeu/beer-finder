@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from '../../actions';
 
 function Login() {
     const [input, setInput] = useState({
@@ -6,6 +8,13 @@ function Login() {
     });
     const [submitted, setSubmitted] = useState(false);
     const { username } = input;
+    const loggingIn = useSelector(state => state.authentication.loggingIn);
+    const dispatch = useDispatch();
+
+    // reset login status
+    useEffect(() => { 
+        dispatch(userActions.logout()); 
+    }, [dispatch]);
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -14,7 +23,11 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault();
+
         setSubmitted(true);
+        if (username) {
+            dispatch(userActions.login(username));
+        }
     }
 
     return (
@@ -30,7 +43,7 @@ function Login() {
                 </div>
                 <div className="form-group">
                     <button className="btn btn-primary">
-                        <span className="spinner-border spinner-border-sm mr-1"></span>
+                        {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Login
                     </button>
                 </div>
