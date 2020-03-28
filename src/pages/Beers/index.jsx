@@ -24,7 +24,9 @@ function Beers() {
                 <ul>
                     {beers.items.map((beer) =>
                         <li key={beer.id}>
+                            <Link to={`/beer/${beer.id}`}>
                             {beer.name + ' ' + beer.abv + ' %'}
+                            </Link>
                         </li>
                     )}
                 </ul>
