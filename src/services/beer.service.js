@@ -3,8 +3,8 @@ export const beerService = {
     getBeerById
 };
 
-function getAll() {
-    return fetch(`https://api.punkapi.com/v2/beers`).then(handleResponse);
+function getAll(page) {
+    return fetch(`https://api.punkapi.com/v2/beers?page=${page}`).then(handleResponse);
 }
 
 function getBeerById(id) {

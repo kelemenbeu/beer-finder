@@ -6,11 +6,11 @@ export const beerActions = {
     getBeerById
 };
 
-function getAll() {
+function getAll(page) {
     return dispatch => {
         dispatch(request());
 
-        beerService.getAll()
+        beerService.getAll(page)
             .then(
                 beers => dispatch(success(beers)),
                 error => dispatch(failure(error.toString()))

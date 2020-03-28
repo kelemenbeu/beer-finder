@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Paginator from 'react-hooks-paginator';
 
 import { beerActions } from '../../actions';
 
 function Beers() {
+    const [offset, setOffset] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
     const beers = useSelector(state => state.beers);
     const user = useSelector(state => state.authentication.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(beerActions.getAll());
-    }, [dispatch]);
+        dispatch(beerActions.getAll(currentPage));
+    }, [dispatch, currentPage]);
 
-    console.log(beers)
+    console.log(currentPage, offset)
 
     return (
+        <>
         <div className="col-lg-8 offset-lg-2">
             <h1>Hi {user}!</h1>
             <p>You're logged in with React Hooks!!</p>
@@ -37,6 +41,15 @@ function Beers() {
                 <Link to="/login">Logout</Link>
             </p>
         </div>
+        <Paginator
+            totalRecords={325}
+            pageLimit={25}
+            pageNeighbours={0}
+            setOffset={setOffset}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+        />
+        </>
     );
 }
 
