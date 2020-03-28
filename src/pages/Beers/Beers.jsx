@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { userActions } from '../../actions';
+import { beerActions } from '../../actions';
 
 function Beers() {
-    const beers = useSelector(state => state.users);
+    const beers = useSelector(state => state.beers);
     const user = useSelector(state => state.authentication.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(userActions.getAll());
+        dispatch(beerActions.getAll());
     }, [dispatch]);
 
     return (
