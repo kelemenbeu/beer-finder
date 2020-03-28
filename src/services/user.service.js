@@ -1,7 +1,6 @@
 export const userService = {
     login,
     logout,
-    getAll
 };
 
 function login(username) {
@@ -21,11 +20,6 @@ function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
 }
-
-function getAll() {
-    return fetch(`https://api.punkapi.com/v2/beers`).then(handleResponse);
-}
-
 
 function handleResponse(response) {
     return response.text().then(text => {
