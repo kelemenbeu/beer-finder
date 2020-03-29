@@ -1,17 +1,20 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as GrapeLogo } from "../../../grape_logo.svg";
 
-import React from "react"
-import { Link } from 'react-router-dom';
-
-const Header = ({ userName })=> (
-  <div className="header">
-    <div className="leftside">
-      <h3>Beer Finder</h3>
+const Header = ({ userName }) => (
+  <nav className="navbar navbar-light bg-light">
+    <div className="navbar-brand">
+      <GrapeLogo style={{ height: "5rem", width: "auto" }} />
+      <h3 className="navbar-text">Beer Finder</h3>
     </div>
-    <div className="rightside">
-      {`Hello, ${userName}!`}
-      <Link to="/login">Logout</Link>
+    <div>
+      <span className="navbar-text">{`Hello, ${userName}!`}</span>
+      <Link className="btn btn-primary" to="/login">
+        Logout
+      </Link>
     </div>
-  </div>
-)
+  </nav>
+);
 
-export { Header }
+export { Header };
