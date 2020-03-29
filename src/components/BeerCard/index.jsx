@@ -18,6 +18,7 @@ const BeerCard = ({ data }) => (
         <div className="col-md-8 text-center">
           <div className="card-body">
             <h5 className="card-title">{data.name}</h5>
+            <p className="card-text">abv: {data.abv}%</p>
             <Link className="btn btn-primary" to={`/beer/${data.id}`}>
               Details
             </Link>
