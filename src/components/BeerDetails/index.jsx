@@ -1,29 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BeerCard = ({ data }) => (
-  <div className="col-sm-2 col-md-4 col-lg-2">
+const BeerDetails = ({ data }) => (
+  <div className="row justify-content-md-center">
     <div
       className="card bg-light mb-3"
-      style={{ borderRadius: "0.50rem", minHeight: "10rem" }}
+      style={{ border: "none", minHeight: "10rem" }}
     >
-      <div className="row no-gutters align-items-end">
+      <div className="row no-gutters">
         <div className="col-md-4">
           {data.image_url && (
-            <img
-              src={data.image_url}
-              className="card-img-top"
-              alt="..."
-              style={{ width: "5rem", height: "15rem" }}
-            />
+            <img src={data.image_url} className="card-img-top" alt="..." />
           )}
         </div>
         <div className="col-md-8 text-center">
           <div className="card-body">
             <h5 className="card-title">{data.name}</h5>
             <p className="card-text">abv: {data.abv}%</p>
-            <Link className="btn btn-primary" to={`/beer/${data.id}`}>
-              Details
+            <Link className="btn btn-primary" to="/">
+              Back
             </Link>
           </div>
         </div>
@@ -32,4 +27,4 @@ const BeerCard = ({ data }) => (
   </div>
 );
 
-export default BeerCard;
+export default BeerDetails;

@@ -22,7 +22,7 @@ function Beers() {
     <FramedLayout userName={user}>
       <div style={{ margin: "2rem" }}>
         <h3>All beers:</h3>
-        <div className="row row-cols-5">
+        <div className="row">
           {beers.loading && <em>Loading beers...</em>}
           {beers.error && (
             <span className="text-danger">ERROR: {beers.error}</span>
