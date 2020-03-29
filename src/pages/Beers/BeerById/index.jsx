@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { beerActions } from "../../../actions";
+import BeerDetails from "../../../components/BeerDetails";
 import FramedLayout from "../../../layouts/Framed";
 
 function BeerById({ match }) {
@@ -15,10 +16,10 @@ function BeerById({ match }) {
 
   return (
     <FramedLayout userName={user}>
-      <div style={{ margin: "2rem" }}>
+      <div className="container">
         {beer.loading && <em>Loading beers...</em>}
         {beer.error && <span className="text-danger">ERROR: {beer.error}</span>}
-        {beer.items && <p>{beer.items.name}</p>}
+        {beer.items && <BeerDetails data={beer.items} />}
       </div>
     </FramedLayout>
   );
