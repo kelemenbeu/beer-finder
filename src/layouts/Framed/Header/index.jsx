@@ -4,10 +4,10 @@ import { ReactComponent as GrapeLogo } from "../../../grape_logo.svg";
 
 const Header = ({ userName }) => (
   <nav className="navbar navbar-light bg-light">
-    <div className="navbar-brand">
+    <Link className="navbar-brand" to="/">
       <GrapeLogo style={{ height: "5rem", width: "auto" }} />
       <h3 className="navbar-text">Beer Finder</h3>
-    </div>
+    </Link>
     <div>
       <span className="navbar-text">{`Hello, ${userName}!`}</span>
       <Link className="btn btn-primary" to="/login">
