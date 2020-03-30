@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BeerCard = ({ data }) => (
-  <div className="col-sm-2 col-md-4 col-lg-2">
+  <div className="col">
     <div
       className="card bg-light mb-3"
       style={{ borderRadius: "0.50rem", minHeight: "10rem" }}
     >
       <div className="row no-gutters align-items-end">
-        <div className="col-md-4">
+        <div className="col-md-4 text-center">
           {data.image_url && (
             <img
               src={data.image_url}
