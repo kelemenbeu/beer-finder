@@ -58,6 +58,7 @@ function Login() {
                 <input
                   type="text"
                   name="username"
+                  maxLength="16"
                   value={username}
                   onChange={handleChange}
                   className={
