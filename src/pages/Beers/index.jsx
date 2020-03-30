@@ -25,14 +25,14 @@ function Beers() {
         <BeerFilter/>
         <BeerList beers={beers} />
       </div>
-      <Paginator
+        <Paginator
         totalRecords={325}
         pageLimit={15}
         pageNeighbours={0}
         setOffset={setOffset}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-      />
+        />
     </FramedLayout>
   );
 }

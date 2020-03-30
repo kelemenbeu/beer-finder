@@ -60,12 +60,12 @@ function getBeerByParams(name, min, max) {
   };
 
   function request() {
-    return { type: beerConstants.GETBEERBYNAME_REQUEST };
+    return { type: beerConstants.GETBEERBYPARAMS_REQUEST };
   }
   function success(beers) {
-    return { type: beerConstants.GETBEERBYNAME_SUCCESS, beers };
+    return { type: beerConstants.GETBEERBYPARAMS_SUCCESS, beers };
   }
   function failure(error) {
-    return { type: beerConstants.GETBEERBYNAME_FAILURE, error };
+    return { type: beerConstants.GETBEERBYPARAMS_FAILURE, error };
   }
 }
