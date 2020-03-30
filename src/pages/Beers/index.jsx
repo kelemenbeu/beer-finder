@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Paginator from "react-hooks-paginator";
 import { useDispatch, useSelector } from "react-redux";
 import { beerActions } from "../../actions";
-import BeerCard from "../../components/BeerCard";
+import BeerList from "./BeerList";
+import BeerFilter from "../../components/BeerFilter";
 import FramedLayout from "../../layouts/Framed";
 
 function Beers() {
@@ -21,15 +22,8 @@ function Beers() {
   return (
     <FramedLayout userName={user}>
       <div style={{ margin: "2rem" }}>
-        <h3>All beers:</h3>
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5">
-          {beers.loading && <em>Loading beers...</em>}
-          {beers.error && (
-            <span className="text-danger">ERROR: {beers.error}</span>
-          )}
-          {beers.items &&
-            beers.items.map(beer => <BeerCard key={beer.id} data={beer} />)}
-        </div>
+        <BeerFilter/>
+        <BeerList beers={beers} />
       </div>
       <Paginator
         totalRecords={325}
