@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../actions";
+import { ReactComponent as GrapeLogo } from "../../grape_logo.svg";
 
 function Login() {
   const [input, setInput] = useState({
@@ -34,7 +35,13 @@ function Login() {
     <div className="container min-vh-100">
       <div className="row h-100 justify-content-center align-items-center">
         <div className="col-10 col-md-8 col-lg-6">
-          <div className="card" style={{ marginTop: "50%" }}>
+          <div
+            className="card bg-light"
+            style={{ border: "none", marginTop: "50%" }}
+          >
+            <div className="card-header">
+              <GrapeLogo style={{ height: "3rem", width: "auto" }} />
+            </div>
             <form
               name="form"
               onSubmit={handleSubmit}
