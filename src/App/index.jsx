@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { alertActions } from "../actions";
-import { PrivateRoute } from "../components";
+import { PrivateRoute } from "../components/PrivateRoute";
 import { history } from "../helpers";
 import { Beers } from "../pages/Beers";
 import { BeerById } from "../pages/Beers/BeerById";
