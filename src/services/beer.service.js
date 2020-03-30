@@ -16,8 +16,9 @@ function getBeerById(id) {
     .then(elem => elem && elem[0]);
 }
 
-function getBeerByParams(name = "", min = 0, max = 100) {
-  return fetch(`https://api.punkapi.com/v2/beers?beer_name=${name}&abv_gt=${min}&abv_lt=${max}`).then(
+function getBeerByParams(name, min = 0, max = 100) {
+  const query = name !== "" ? `beer_name=${name}&abv_gt=${min}&abv_lt=${max}` : `abv_gt=${min}&abv_lt=${max}`;
+  return fetch(`https://api.punkapi.com/v2/beers?${query}`).then(
     handleResponse
   );
 }
