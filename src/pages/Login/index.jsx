@@ -31,33 +31,49 @@ function Login() {
   }
 
   return (
-    <div className="col-lg-8 offset-lg-2">
-      <h2>Login</h2>
-      <form name="form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Username</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleChange}
-            className={
-              "form-control" + (submitted && !username ? " is-invalid" : "")
-            }
-          />
-          {submitted && !username && (
-            <div className="invalid-feedback">Username is required</div>
-          )}
+    <div className="container min-vh-100">
+      <div className="row h-100 justify-content-center align-items-center">
+        <div className="col-10 col-md-8 col-lg-6">
+          <div className="card" style={{ marginTop: "50%" }}>
+            <form
+              name="form"
+              onSubmit={handleSubmit}
+              style={{
+                width: "100%",
+                maxWidth: "330px",
+                padding: "15px",
+                margin: "auto"
+              }}
+            >
+              <h2 className="h3 mb-3 font-weight-normal">Please sign in</h2>
+              <div className="form-group">
+                <label>Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={handleChange}
+                  className={
+                    "form-control" +
+                    (submitted && !username ? " is-invalid" : "")
+                  }
+                />
+                {submitted && !username && (
+                  <div className="invalid-feedback">Username is required</div>
+                )}
+              </div>
+              <div className="form-group">
+                <button className="btn btn-primary">
+                  {loggingIn && (
+                    <span className="spinner-border spinner-border-sm mr-1"></span>
+                  )}
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="form-group">
-          <button className="btn btn-primary">
-            {loggingIn && (
-              <span className="spinner-border spinner-border-sm mr-1"></span>
-            )}
-            Login
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

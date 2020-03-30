@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 const BeerDetails = ({ data }) => (
   <div className="row justify-content-md-center">
-    <div
-      className="card bg-light mb-3"
-      style={{ border: "none", minHeight: "10rem" }}
-    >
+    <div className="media" style={{ border: "none", minHeight: "10rem" }}>
       <div className="row no-gutters">
         <div className="col-md-4">
           {data.image_url && (
