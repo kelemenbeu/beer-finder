@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../actions";
-import { ReactComponent as GrapeLogo } from "../../grape_logo.svg";
+import { ReactComponent as Logo } from "../../beer-solid.svg";
+import background from "../../beer.jpg"
 
 function Login() {
   const [input, setInput] = useState({
@@ -32,15 +33,15 @@ function Login() {
   }
 
   return (
-    <div className="container min-vh-100">
-      <div className="row h-100 justify-content-center align-items-center">
-        <div className="col-10 col-md-8 col-lg-6">
+    <div className="container-fluid min-vh-100" style={{background: `url(${background}) no-repeat center center fixed`}}>
+      <div className="row justify-content-center align-items-center">
+        <div className="col-8 col-md-6 col-lg-4">
           <div
             className="card bg-light"
             style={{ border: "none", marginTop: "50%" }}
           >
             <div className="card-header">
-              <GrapeLogo style={{ height: "3rem", width: "auto" }} />
+              <Logo style={{ height: "3rem", width: "auto" }} />
             </div>
             <form
               name="form"
@@ -71,7 +72,7 @@ function Login() {
                 )}
               </div>
               <div className="form-group">
-                <button className="btn btn-primary">
+                <button className="btn btn-secondary">
                   {loggingIn && (
                     <span className="spinner-border spinner-border-sm mr-1"></span>
                   )}

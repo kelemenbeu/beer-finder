@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       {alert.message && (
-        <div className={`alert ${alert.type}`}>{alert.message}</div>
+        <div className={`alert ${alert.type}`} style={{position: "absolute"}}>{alert.message}</div>
       )}
       <Router history={history}>
         <Switch>

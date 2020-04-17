@@ -30,7 +30,7 @@ function handleResponse(response) {
                 logout();
                 window.location.reload(true);
             }
-            const errorMessage = data.answer === "no" ? "Login failed." : response.statusText;
+            const errorMessage = data.answer === "no" ? "Login failed. Try again." : response.statusText;
             return Promise.reject(errorMessage);
         }
         return data;
